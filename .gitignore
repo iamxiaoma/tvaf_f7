@@ -43,3 +43,4 @@ npm-debug.log
 www/
 src/fonts
 package-lock.json
+*.json
