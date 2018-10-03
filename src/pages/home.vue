@@ -1,5 +1,5 @@
 <template>
-  <f7-page>
+  <f7-page name="home">
     <f7-navbar>
       <f7-nav-left>
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
@@ -14,6 +14,7 @@
       <f7-link>Right Link</f7-link>
     </f7-toolbar>
     <f7-block strong>
+      <span v-text="$t('app.app_name')"></span>
       <p>Here is your blank Framework7 app. Let's see what we have here.</p>
     </f7-block>
     <f7-block-title>Navigation</f7-block-title>
@@ -50,5 +51,32 @@
   </f7-page>
 </template>
 <script>
-export default {}
+import { mapState } from "vuex";
+
+export default {
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState({
+      plusReady: state => state.plusReady
+    })
+  },
+  mounted: function() {
+    console.log("mounted");
+    this.$nextTick(function() {
+      console.log("nextTick");
+      // 切换语言
+      this.$i18n.locale = "en";
+    });
+  },
+  methods: {
+    onF7Ready(f7) {
+      console.log("onF7Ready", f7);
+    },
+    init: function() {
+      console.log("home page init");
+    }
+  }
+};
 </script>

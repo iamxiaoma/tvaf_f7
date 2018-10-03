@@ -1,5 +1,5 @@
 <template>
-  <f7-page>
+  <f7-page name="panel-left">
     <f7-navbar title="Left Panel"></f7-navbar>
     <f7-block strong>
       <p>Left panel content goes here</p>
@@ -17,5 +17,5 @@
   </f7-page>
 </template>
 <script>
-export default {}
+export default {};
 </script>

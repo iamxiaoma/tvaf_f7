@@ -1,5 +1,5 @@
 <template>
-  <f7-page>
+  <f7-page name="form">
     <f7-navbar title="Form" back-link="Back"></f7-navbar>
     <f7-block-title>Form Example</f7-block-title>
     <f7-list form>
@@ -102,5 +102,5 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>

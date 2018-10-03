@@ -1,5 +1,5 @@
 <template>
-  <f7-page>
+  <f7-page name="not-found">
     <f7-navbar title="Not found" back-link="Back"></f7-navbar>
     <f7-block strong>
       <p>Sorry</p>
@@ -8,5 +8,5 @@
   </f7-page>
 </template>
 <script>
-  export default {};
+export default {};
 </script>

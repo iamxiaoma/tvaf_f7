@@ -1,5 +1,5 @@
 <template>
-  <f7-page>
+  <f7-page name="dynamic-route">
     <f7-navbar title="Dynamic Route" back-link="Back"></f7-navbar>
     <f7-block strong>
       <ul>
@@ -26,5 +26,5 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>

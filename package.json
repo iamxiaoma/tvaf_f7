@@ -1,6 +1,6 @@
 {
-  "name": "framework7-template-vue-webpack",
-  "version": "2.0.0",
+  "name": "framework7-template-vue-vuex-h5plus-webpack",
+  "version": "1.0.0",
   "description": "Framework7 Vue Webpack starter app template",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/framework7io/framework7-template-vue-webpack.git"
+    "url": "git+https://github.com/iamxiaoma/tvaf_f7.git"
   },
   "keywords": [
     "ios",
@@ -24,20 +24,25 @@
     "app",
     "f7"
   ],
-  "author": "Vladimir Kharlampidi",
+  "author": "iamxiaoma",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/framework7io/framework7-template-vue-webpack/issues"
+    "url": "https://github.com/iamxiaoma/tvaf_f7/issues"
   },
-  "homepage": "http://framework7.io/vue/",
+  "homepage": "http://framework7.cn/vue/",
   "dependencies": {
     "framework7": "^3.4.0",
     "framework7-icons": "^0.9.1",
     "framework7-vue": "^3.4.0",
     "material-design-icons": "^3.0.1",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-i18n": "^8.1.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "weixin-js-sdk": "^1.4.0-test"
   },
   "devDependencies": {
+    "@kazupon/vue-i18n-loader": "^0.3.0",
     "autoprefixer": "^7.2.6",
     "babel-core": "^6.26.3",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",

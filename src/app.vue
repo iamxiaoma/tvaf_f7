@@ -62,20 +62,34 @@
 
 <script>
 // Import Routes
-import routes from './routes.js'
+import routes from "./routes.js";
 
 export default {
   data() {
     return {
       // Framework7 parameters here
       f7params: {
-        id: 'io.framework7.testapp', // App bundle ID
-        name: 'Framework7', // App name
-        theme: 'auto', // Automatic theme detection
+        id: "cn.framework7.tvaf", // App bundle ID
+        name: "tvaf", // App name
+        theme: "ios", // Automatic theme detection
         // App routes
         routes: routes,
-      },
-    }
+        view: {
+          name: "main",
+          main: true,
+          xhrCache: false,
+          iosDynamicNavbar: false,
+          pushState: true,
+          pushStateRoot: "http://localhost:8080/",
+          pushStateSeparator: "#"
+        },
+        on: {
+          init: function() {
+            console.log("App init");
+          }
+        }
+      }
+    };
   }
-}
+};
 </script>
