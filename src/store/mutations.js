@@ -10,6 +10,11 @@ export default {
   }) {
     Vue.set(state, 'plusReady', isReady)
   },
+  [types.INIT_JSSDK](state, {
+    init
+  }) {
+    Vue.set(state, 'wxjssdk_inited', init);
+  },
   [types.SET_WEIXIN](state, weixin) {
     Vue.set(state, 'weixin', weixin)
   },

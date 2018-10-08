@@ -19,6 +19,15 @@ export function setWeixin({
   commit(types.SET_WEIXIN, weixin)
 }
 
+export function initJSSDK({
+  commit
+}, {
+  init
+}) {
+  console.log('initJSSDK', init);
+  commit(types.INIT_JSSDK, init);
+}
+
 // 登录
 export function login({
   commit

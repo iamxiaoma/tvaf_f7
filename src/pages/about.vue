@@ -12,5 +12,42 @@
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+import { WXJSSDK } from "../js/wx_jssdk_mixin.js";
+
+export default {
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState({
+      plusReady: state => state.plusReady
+    })
+  },
+  mixins: [WXJSSDK],
+  mounted: function() {
+    var that = this;
+    that.$nextTick(function() {
+      console.log("about nextTick");
+      var title = "我是关于页面标题";
+      var link = "http://h5.xcourage.fullstack.cn";
+      var imgUrl = "http://cdn.framework7.cn/i/aplt.png";
+      var desc = "我是关于页面内容";
+      that.updateShareConfig(title, link, imgUrl, desc);
+    });
+    // this.$f7ready(f7 => {
+    //   console.log("home f7 ready");
+    //   this.$f7.dialog.alert("f7 ready");
+    //   // 切换语言
+    //   // console.log("this.$i18n", this.$i18n);
+    //   // this.$i18n.locale = "en";
+    //   var title = "测试分享标题";
+    //   var link = "http://h5.xcourage.fullstack.cn";
+    //   var imgUrl = "http://cdn.framework7.cn/i/aplt.png";
+    //   var desc = "测试分享内容";
+    //   this.updateShareConfig(title, link, imgUrl, desc);
+    // });
+  },
+  methods: {}
+};
 </script>

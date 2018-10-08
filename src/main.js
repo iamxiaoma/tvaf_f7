@@ -1,6 +1,8 @@
 // Import Vue
 import Vue from 'vue';
 
+import axios from 'axios';
+
 // Import F7
 import Framework7 from 'framework7/framework7.esm.bundle.js';
 
@@ -61,16 +63,13 @@ setLang(store, {
   'lang': lang
 })
 
+// 判断是否微信浏览器里打开
+const ua = window.navigator.userAgent.toLowerCase();
+//console.log('ua', ua);
+// 如果不在微信浏览器内，微信分享也没意义了对吧？这里判断一下
 setWeixin(store, {
-  'weixin': true
-})
-
-// After the following setup all XHR requests will have additional 'Autorization' header
-Framework7.request.setup({
-  headers: {
-    'Authorization': 'sometokenvalue'
-  }
-})
+  'weixin': ua.indexOf('micromessenger') > 0
+});
 
 //console.log("Vue.t('app.modal.button_ok')", Vue.t('app.modal.button_ok'));
 
@@ -78,7 +77,7 @@ Framework7.request.setup({
 document.addEventListener('plusready', doPlusReady, false)
 
 function doPlusReady() {
-  console.log('doPlusReady')
+  console.log('doPlusReady');
   plusReady(store, {
     'isReady': true
   })
@@ -117,6 +116,26 @@ if (webDev) {
     }
   });
 }
+
+axios.defaults.baseURL = 'http://api.tvaf.fullstack.cn/mp/'
+axios.defaults.timeout = 30000
+axios.defaults.headers.common['Token'] = cache.get('token') || "";
+//fullstack.
+// Add a request interceptor
+axios.interceptors.request.use(config => {
+  return config
+}, error => {
+  return Promise.reject(error);
+})
+
+// Add a response interceptor
+axios.interceptors.response.use(response => {
+  let data = response.data
+  return !data.err_code ? data : Promise.reject(data)
+}, error => {
+  return Promise.reject(error);
+});
+
 
 
 window.addEventListener('resize', function () {
