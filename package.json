@@ -32,11 +32,11 @@
   "homepage": "http://framework7.cn/vue/",
   "dependencies": {
     "axios": "^0.18.0",
-    "framework7": "^3.6.0",
+    "framework7": "^3.6.1",
     "framework7-icons": "^0.9.1",
-    "framework7-vue": "^3.6.0",
+    "framework7-vue": "^3.6.1",
     "material-design-icons": "^3.0.1",
-    "vue": "^2.5.17",
+    "vue": "^2.5.20",
     "vue-i18n": "^8.4.0",
     "vue-router": "^3.0.2",
     "vuex": "^3.0.1",
@@ -75,11 +75,11 @@
     "url-loader": "^0.5.8",
     "vue-loader": "^13.7.3",
     "vue-style-loader": "^3.1.2",
-    "vue-template-compiler": "^2.5.17",
+    "vue-template-compiler": "^2.5.20",
     "webpack": "^3.12.0",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-dev-server": "^2.11.3",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.1.5"
   },
   "engines": {
     "node": ">= 6.0.0",
